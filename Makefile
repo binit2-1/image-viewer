@@ -1,7 +1,5 @@
 CC = gcc
 
-
-
 all: image-viewer
 
 image-viewer:image-viewer.c
@@ -9,7 +7,7 @@ image-viewer:image-viewer.c
 
 push:
 	git add .
-	git commit -m "Changed readme"
+	git commit -m "Minor Changes"
 	git push origin main
 
 clean:
