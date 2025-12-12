@@ -1,4 +1,5 @@
 .vscode
 image-viewer
+fastfetch.ppm
 *.o
 *.out
