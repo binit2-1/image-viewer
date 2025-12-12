@@ -10,9 +10,9 @@ int main()
 
     freopen("./fastfetch.ppm", "rb", stdin);
     char *buffer = malloc(1000 * sizeof(char));
-    fgets(buffer, 1000, stdin);
-    fgets(buffer, 1000, stdin);
-    free(buffer);
+    fgets(buffer, 1000, stdin);// Collects size 
+    fgets(buffer, 1000, stdin);// Collects comment
+    
 
     char *dimensions = malloc(1000 * sizeof(char));
     fgets(dimensions, 1000, stdin);
@@ -21,6 +21,10 @@ int main()
     split = strtok(NULL, " ");
     int h = atoi(split);
     printf("Width: %d, Height: %d\n", w, h);
+    free(dimensions);
+    fgets(buffer, 1000, stdin); // Collects max color value
+    free(buffer); //frees the throwaway buffer
+    
 
     Uint32 flags = 0;
     SDL_Window *pwindow = SDL_CreateWindow(ptitle,
@@ -44,4 +48,5 @@ int main()
     }
     SDL_UpdateWindowSurface(pwindow);
     SDL_Delay(3000);
+    
 }
